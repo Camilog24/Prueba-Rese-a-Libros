@@ -1,0 +1,83 @@
+﻿@model PruebaReseñaLibros.ViewModels.UsuarioVM;
+
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Técnica</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .bg {
+            background-position: center center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container w-75 mt-5 rounded shadow">
+        <div class="row align-items-stretch">
+            <div class="col bg">
+                <img src="~/Img/librerialogin.jpg" width="600" height="auto"  />
+            </div>
+            <div class="col bg-white p-4 rounded-end">
+                <h2 class="fw-bold text-center py-1">Bienvenido</h2>
+                <form asp-controller="Usuario" asp-action="Registro" method="post">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Nombre Completo</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" id="Nombres" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Este campo no recibe números o simbolos" asp-for="Nombres" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Apellido Completo</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" id="Apellidos" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Este campo no recibe números o simbolos" asp-for="Apellidos" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="email" class="form-control" id="email" asp-for="Correo" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" class="form-control" id="password" asp-for="Contraseña" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label"> Confirmar Contraseña</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" class="form-control" id="Confirmarpassword" asp-for="ConfirmarContraseña" required>
+                        </div>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                    </div>
+
+                    @if (ViewData["Mensaje"] != null)
+                    {
+                        <div class="form-group">
+                            <div class=" alert alert-danger" role="alert">
+                                @ViewData["Mensaje"]
+                            </div>
+                        </div>
+                    }
+
+                    <div class="my-3 text-center">
+                        <span>¿Ya tienes una cuenta? <a asp-controller="Usuario" asp-action="Login">Ingresa</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+

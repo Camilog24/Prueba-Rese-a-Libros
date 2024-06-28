@@ -1,0 +1,91 @@
+﻿@model IEnumerable<PruebaReseñaLibros.Models.Libros>
+@section Estilos {
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        .card-body p {
+            font-size: 14px;
+        }
+
+        footer {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas de libros</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <h1 class="mb-0">Reseña de libros</h1>   
+        </div>
+    </header>
+
+    <main class="container mt-5">
+        <form method="get" action="@Url.Action("FiltrarLibros")">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="nombreLibro">Nombre del Libro:</label>
+                    <input type="text" id="nombreLibro" name="nombreLibro" class="form-control" />
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="autor">Autor:</label>
+                    <input type="text" id="autor" name="autor" class="form-control" />
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="categoria">Categoría:</label>
+                    <input type="text" id="categoria" name="categoria" class="form-control" />
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">Filtrar</button>
+                    <a href="@Url.Action("FiltrarLibros")" class="btn btn-secondary">Limpiar</a>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            @foreach (var libro in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(libro.ImagenLibro)" class="card-img-top" alt="@libro.TituloLibro">
+                        <div class="card-body">
+                            <h5 class="card-title">@libro.TituloLibro</h5>
+                            <p class="card-text">Categoría: @libro.Categoria</p>                      
+                            <p class="card-text"><strong>$@libro.Precio</strong></p>
+                            <a href="@Url.Action("DetallesLibreria", "Usuario", new { idLib = libro.IdTitulo })" class="btn btn-primary">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-3 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">© 2024 Reseñas de libros. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

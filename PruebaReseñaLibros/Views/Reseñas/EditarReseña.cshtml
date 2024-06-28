@@ -1,0 +1,53 @@
+﻿@model PruebaReseñaLibros.Models.Reseñas
+
+
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4" style="color: #333;">Editar Reseña</h2>
+    <form asp-action="EditarReseña" method="post">
+        <input type="hidden" asp-for="idReseña" />
+        <input type="hidden" asp-for="idLibro" />
+        <div class="form-group">
+            <label asp-for="Contenido" class="control-label">Contenido</label>
+            <textarea asp-for="Contenido" class="form-control" rows="5"></textarea>
+            <span asp-validation-for="Contenido" class="text-danger"></span>
+        </div>
+        <div class="form-group text-center">
+            <input type="submit" value="Guardar" class="btn btn-primary" />
+            <a asp-action="MostrarReseñas" asp-route-idTitulo="@Model.idLibro" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+<style>
+    .container {
+        max-width: 800px;
+    }
+
+    .form-group label {
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>

@@ -1,0 +1,63 @@
+﻿@model PruebaReseñaLibros.Models.Libros
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Libro</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/styles.css">
+</head>
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <h1 class="mb-0">Detalles del Libro</h1>
+        </div>
+    </header>
+
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="data:image/jpeg;base64,@Convert.ToBase64String(Model.ImagenLibro)" class="img-fluid" alt="@Model.TituloLibro">
+            </div>
+            <div class="col-md-6">
+                <h2>@Model.TituloLibro</h2>
+                <p><strong>Autor:</strong> @Model.AutorLibro</p>
+                <p><strong>Categoría:</strong> @Model.Categoria</p>
+                <p><strong>Idioma:</strong> @Model.Idioma</p>
+                <p><strong>Resumen:</strong> @Model.Resumen</p>
+                <p><strong>Precio:</strong> $@Model.Precio</p>
+
+                <a href="@Url.Action("Libreria", "Usuario")" class="btn btn-primary">Volver a la Lista</a>
+                <a href="@Url.Action("MostrarReseñas", "Reseñas", new { idTitulo = Model.IdTitulo })" class="btn btn-primary">Ver Reseñas</a>
+ 
+                <div class="card mt-4 shadow-sm">
+                    <div class="card-body">
+                        <h4>Agregar una Reseña</h4>
+                        <form asp-action="AgregarReseña" method="post">
+                            <input type="hidden" name="IdTitulo" value="@Model.IdTitulo" />
+                            <div class="form-group">
+                                <label for="Contenido">Contenido</label>
+                                <textarea class="form-control" id="Contenido" name="Contenido" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3">Agregar Reseña</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-3 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">© 2024 Tienda de Libros. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

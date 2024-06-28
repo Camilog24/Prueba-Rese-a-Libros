@@ -1,0 +1,92 @@
+﻿@model PruebaReseñaLibros.Models.Reseñas
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4" style="color: #333;">Eliminar Reseña</h2>
+
+    <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="card-title mb-0">@Model.Usuario</h5>
+                <span class="text-muted">@Model.FechaCreacion.ToString("dd/MM/yyyy")</span>
+            </div>
+            <p class="card-text">@Model.Contenido</p>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <h4 class="text-danger">¿Está seguro que desea eliminar esta reseña?</h4>
+    </div>
+
+    <form asp-action="EliminarReseña" method="post">
+        <input type="hidden" asp-for="idReseña" />
+        <input type="hidden" asp-for="idLibro" />
+        <div class="form-group text-center">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            <a asp-action="MostrarReseñas" asp-route-idTitulo="@Model.idLibro" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+<style>
+    .container {
+        max-width: 800px;
+    }
+
+    .card {
+        border: none;
+        border-radius: 10px;
+        background-color: #f8f9fa;
+        transition: transform 0.2s;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #495057;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .mt-5 {
+        margin-top: 3rem;
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem;
+    }
+
+    .mb-3 {
+        margin-bottom: 1rem;
+    }
+
+    .shadow-sm {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+</style>

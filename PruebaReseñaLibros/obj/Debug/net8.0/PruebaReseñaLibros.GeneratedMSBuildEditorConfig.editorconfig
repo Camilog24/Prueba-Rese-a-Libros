@@ -1,0 +1,107 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PruebaReseñaLibros
+build_property.RootNamespace = PruebaReseñaLibros
+build_property.ProjectDir = C:\Users\famil\OneDrive\Escritorio\PruebaReseñaLibros\PruebaReseñaLibros\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\Users\famil\OneDrive\Escritorio\PruebaReseñaLibros\PruebaReseñaLibros
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/LibrosAdmin/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9zQWRtaW5cQ3JlYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/LibrosAdmin/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9zQWRtaW5cRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/LibrosAdmin/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9zQWRtaW5cRWxpbWluYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/LibrosAdmin/ListarLibros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9zQWRtaW5cTGlzdGFyTGlicm9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/Reseñas/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZcOxYXNcQWNjZXNzRGVuaWVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/Reseñas/EditarReseña.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZcOxYXNcRWRpdGFyUmVzZcOxYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/Reseñas/EliminarReseña.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZcOxYXNcRWxpbWluYXJSZXNlw7FhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/Reseñas/_ReseñasList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZcOxYXNcX1Jlc2XDsWFzTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/Usuario/DetallesLibreria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xEZXRhbGxlc0xpYnJlcmlhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/Usuario/Libreria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xMaWJyZXJpYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/Usuario/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/Usuario/Registro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xSZWdpc3Ryby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/Usuario/_ReseñasList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xfUmVzZcOxYXNMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/famil/OneDrive/Escritorio/PruebaReseñaLibros/PruebaReseñaLibros/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-2z7kuvh825

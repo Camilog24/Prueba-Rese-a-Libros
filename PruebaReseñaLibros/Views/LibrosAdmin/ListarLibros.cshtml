@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@section Estilos {
+    <link href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/fixedheader/4.0.1/css/fixedHeader.dataTables.css" rel="stylesheet" />
+    <style>
+        thead input {
+            width: 100%;
+        }
+    </style>
+}
+
+<div class="card">
+    <div class="card-header">
+        Libros
+    </div>
+    <div class="col-lg-6">
+        <a class="btn btn-outline-primary" asp-action="Crear"><i class="bi bi-plus-square-fill"></i> Crear Nuevo Libro</a>
+    </div>
+    <div class="col-md-12">
+        <a href="@Url.Action("Libreria", "Usuario")" class="btn btn-primary">Ver pagina principal</a>
+    </div>
+    <div class="card-body">
+        <table id="tbLibros" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Nombre del libro</th>
+                    <th>Autor</th>
+                    <th>Categoria</th>
+                    <th>Idioma</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/4.0.1/js/fixedHeader.dataTables.js"></script>
+    <script>
+        function confirmar() {
+            return confirm("¿Está seguro de eliminar el libro?");
+        }
+
+        $(document).ready(function () {
+            $("#tbLibros").DataTable({
+                "ajax": {
+                    "url": "@Url.Action("ObtenerLibros", "LibrosAdmin")",
+                    "type": "GET",
+                    "dataType": "json",
+                    "error": function (xhr, error, code) {
+                        alert("Error: " + xhr.responseText);
+                    }
+                },
+                "columns": [
+                    { "data": "tituloLibro" },
+                    { "data": "autorLibro" },
+                    { "data": "categoria" },
+                    { "data": "idioma" },
+                    { "data": "precio" },
+                    {
+                        "data": "idTitulo",  // Asegúrate de que este nombre coincide con el modelo
+                        "render": function (data, type, row) {
+                            return `
+                                        <a href="/LibrosAdmin/Editar/${data}" class="btn btn-primary btn-sm me-2">Editar</a>
+                                        <form method="post" action="/LibrosAdmin/Eliminar/${data}" style="display:inline;" onsubmit="return confirmar();">
+                                            <input type="hidden" name="id" value="${data}" />
+                                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                        </form>
+                                    `;
+                        }
+                    }
+                ],
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/2.0.8/i18n/es-MX.json"
+                }
+            });
+        });
+    </script>
+}
+

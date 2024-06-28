@@ -1,0 +1,132 @@
+﻿@model IEnumerable<PruebaReseñaLibros.Models.Reseñas>
+
+<div class="container mt-5">
+    <h3 class="text-center mb-4 reseñas-title">Reseñas de Usuarios</h3>
+    @if (Model != null && Model.Any())
+    {
+        <div class="row mx-auto">
+            @foreach (var reseña in Model)
+            {
+                <div class="col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm rounded-3">
+                        <div class="card-body">
+                            <h5 class="card-title">@reseña.Usuario</h5>
+                            <span class="text-muted">@reseña.FechaCreacion.ToString("dd/MM/yyyy")</span>
+                            <p class="card-text mt-3">@reseña.Contenido</p>
+                            <form asp-action="EditarReseña" asp-route-id="@reseña.idReseña" method="get">
+                                <button type="submit" class="btn btn-custom-edit">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                            </form>
+                            <form asp-action="EliminarReseña" asp-route-id="@reseña.idReseña" method="post" onsubmit="return confirm('¿Está seguro de que desea eliminar esta reseña?')">
+                                <button type="submit" class="btn btn-custom-delete">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-center text-muted">No hay reseñas para este libro.</p>
+    }
+</div>
+
+<style>
+    .container {
+        max-width: 900px;
+    }
+
+    .card {
+        background-color: #f0f0f0;
+        border-radius: 15px;
+        transition: transform 0.2s;
+        border: none;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #495057;
+    }
+
+    .text-muted {
+        color: #999;
+    }
+
+    .mt-5 {
+        margin-top: 3rem;
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem;
+    }
+
+    .reseñas-title {
+        color: #333;
+        font-size: 1.75rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .btn-custom-edit {
+        border: 2px solid #007bff;
+        color: #007bff;
+        background-color: transparent;
+        transition: background-color 0.3s, color 0.3s;
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+    }
+
+        .btn-custom-edit:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+    .btn-custom-delete {
+        border: 2px solid #dc3545;
+        color: #dc3545;
+        background-color: transparent;
+        transition: background-color 0.3s, color 0.3s;
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+    }
+
+        .btn-custom-delete:hover {
+            background-color: #dc3545;
+            color: white;
+        }
+
+    .btn i {
+        margin-right: 5px;
+    }
+</style>
+
+<!-- Add FontAwesome for icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">

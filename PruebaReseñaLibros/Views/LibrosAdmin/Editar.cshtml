@@ -1,0 +1,95 @@
+﻿@model PruebaReseñaLibros.Models.Libros
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Técnica</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <div class="container w-75 mt-5 rounded shadow">
+        <div class="row align-items-stretch">
+            <div class="col bg-white p-4 rounded-end">
+                <h2 class="fw-bold text-center py-1">Bienvenido</h2>
+                <form asp-controller="LibrosAdmin" asp-action="Editar" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="text" class="form-label">Nombre del Libro</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" id="NombreLibro" asp-for="TituloLibro" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="text" class="form-label">Autor</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" id="Autor" asp-for="AutorLibro" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3">
+                            <label>Categoria</label>
+                            <select asp-for="Categoria" class="form-select">
+                                <option value="Ficción">Ficción</option>
+                                <option value="No Ficción">No Ficción</option>
+                                <option value="Literatura Infantil">Literatura Infantil</option>
+                                <option value="Poesía">Poesía</option>
+                                <option value="Drama">Drama</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="text" class="form-label">Idioma</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="text" class="form-control" id="Idioma" asp-for="Idioma" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="text" class="form-label"> Resumen</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="text" class="form-control" id="resumen" asp-for="Resumen" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="text" class="form-label"> Precio</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="text" class="form-control" id="Precio" asp-for="Precio" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="imagen">Imagen</label>
+                        <input type="file" accept="image/PNG, image/gif, image/jpge" name="imagen" id="imagen" class="form-control" asp-for="ImagenLibro" />
+                    </div>
+
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <a asp-controller="LibrosAdmin" asp-action="ListarLibros" class="btn btn-warning">Volver</a>
+                    </div>
+
+                    @if (ViewData["Mensaje"] != null)
+                    {
+                        <div class="form-group">
+                            <div class=" alert alert-danger" role="alert">
+                                @ViewData["Mensaje"]
+                            </div>
+                        </div>
+                    }
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

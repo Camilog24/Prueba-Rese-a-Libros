@@ -1,0 +1,52 @@
+﻿@model PruebaReseñaLibros.ViewModels.LoginVM;
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Técnica</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .bg {
+            background-position: center center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container w-75 mt-5 rounded shadow">
+        <div class="row align-items-stretch">
+            <div class="col bg">
+                <img src="~/Img/librerialogin.jpg" width="600" height="auto" />
+            </div>
+            <div class="col bg-white p-4 rounded-end">
+                <h2 class="fw-bold text-center py-2">Bienvenido</h2>
+                <form asp-controller="Usuario" asp-action="Login" method="post">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="email" class="form-control" id="email" asp-for="Correo" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" class="form-control" id="password" asp-for="Contraseña" required>
+                           
+                        </div>
+                    </div>
+                 
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                    </div>
+                    <div class="my-3 text-center">
+                        <span>¿No tienes una cuenta? <a asp-controller="Usuario" asp-action="Registro">Registrate</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>
